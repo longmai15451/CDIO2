@@ -47,7 +47,7 @@ namespace Project_CDIO2
         public void LoadSV()
         {
             string sqlSV = "select * from SinhVien";
-            dataGridViewGV.DataSource = lopchung.LoadDL(sqlSV);
+            dataGridView_SV.DataSource = lopchung.LoadDL(sqlSV);
         }
         private void Admin_Teacher_Load(object sender, EventArgs e)
         {
@@ -163,12 +163,46 @@ namespace Project_CDIO2
 
         private void btn_delSV_Click(object sender, EventArgs e)
         {
+            string sqlXoa = "delete from SinhVien where MaSV = '" + txt_MSSV.Text + "'";
+            int kq = (int)lopchung.themXoaSua(sqlXoa);
+            if (kq >= 1)
+            {
+                MessageBox.Show("Xóa thành công");
+            }
+            else
+            {
+                MessageBox.Show("Xóa thất bại");
+            }
+            txt_MSSV.Text = "";
+            txt_HotenSV.Text = "";
+            cb_GioiTinh_SV.Text = "";
+            dateT_Sv.Text = "";
+            txt_SDT.Text = "";
+            txt_Email.Text = "";
+            LoadSV();
 
         }
 
         private void btn_updateSV_Click(object sender, EventArgs e)
         {
+            string sqlUpdate = "update TaiKhoan set ";
 
+
+        }
+
+        private void panel_Admin2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dataGridView_SV_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txt_MSSV.Text = dataGridViewGV.CurrentRow.Cells["MaSv"].Value.ToString();
+            txt_HotenSV.Text = dataGridViewGV.CurrentRow.Cells["HoTen"].Value.ToString();
+            cb_GioiTinh_SV.Text = dataGridViewGV.CurrentRow.Cells["GioiTinh"].Value.ToString();
+            dateT_Sv.Text = dataGridViewGV.CurrentRow.Cells["NgaySinh"].Value.ToString();
+            txt_SDT.Text = dataGridViewGV.CurrentRow.Cells["SDT"].Value.ToString();
+            txt_Email.Text = dataGridViewGV.CurrentRow.Cells["Email"].Value.ToString();
         }
     }
 }

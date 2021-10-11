@@ -123,6 +123,7 @@ namespace Project_CDIO2
             this.Controls.Add(this.txt_Username);
             this.Name = "DangNhap";
             this.Text = "DangNhap";
+            this.Load += new System.EventHandler(this.DangNhap_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

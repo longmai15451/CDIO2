@@ -29,21 +29,13 @@ namespace Project_CDIO2
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_GiangVien_Page));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btn_CaiDat = new System.Windows.Forms.Button();
             this.btn_DiemDanh = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.quayLạiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel_CaiDat = new System.Windows.Forms.Panel();
-            this.btn_reset_mk = new System.Windows.Forms.Button();
-            this.btn_LuuMK = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txt_PassNew2 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txt_passNew = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txt_Pass = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel_DiemDanh = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -58,6 +50,15 @@ namespace Project_CDIO2
             this.btn_turnOn = new System.Windows.Forms.Button();
             this.cb_cam = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.btn_reset_mk = new System.Windows.Forms.Button();
+            this.btn_LuuMK = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txt_PassNew2 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txt_passNew = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txt_Pass = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.panel_CaiDat.SuspendLayout();
@@ -133,6 +134,159 @@ namespace Project_CDIO2
             this.panel_CaiDat.Name = "panel_CaiDat";
             this.panel_CaiDat.Size = new System.Drawing.Size(892, 565);
             this.panel_CaiDat.TabIndex = 2;
+            // 
+            // panel_DiemDanh
+            // 
+            this.panel_DiemDanh.Controls.Add(this.pictureBox1);
+            this.panel_DiemDanh.Controls.Add(this.label9);
+            this.panel_DiemDanh.Controls.Add(this.btn_Luu);
+            this.panel_DiemDanh.Controls.Add(this.dataGridView1);
+            this.panel_DiemDanh.Controls.Add(this.btn_Resetdd);
+            this.panel_DiemDanh.Controls.Add(this.groupBox2);
+            this.panel_DiemDanh.Controls.Add(this.label7);
+            this.panel_DiemDanh.Controls.Add(this.comboBox2);
+            this.panel_DiemDanh.Controls.Add(this.btn_turnOn);
+            this.panel_DiemDanh.Controls.Add(this.cb_cam);
+            this.panel_DiemDanh.Controls.Add(this.label8);
+            this.panel_DiemDanh.Location = new System.Drawing.Point(3, 0);
+            this.panel_DiemDanh.Name = "panel_DiemDanh";
+            this.panel_DiemDanh.Size = new System.Drawing.Size(893, 565);
+            this.panel_DiemDanh.TabIndex = 90;
+            this.panel_DiemDanh.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_DiemDanh_Paint);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(32, 134);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(232, 211);
+            this.pictureBox1.TabIndex = 100;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(28, 97);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(74, 20);
+            this.label9.TabIndex = 2;
+            this.label9.Text = "Camera";
+            // 
+            // btn_Luu
+            // 
+            this.btn_Luu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Luu.Image = global::Project_CDIO2.Properties.Resources.Save_icon__1_;
+            this.btn_Luu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Luu.Location = new System.Drawing.Point(610, 218);
+            this.btn_Luu.Name = "btn_Luu";
+            this.btn_Luu.Size = new System.Drawing.Size(154, 64);
+            this.btn_Luu.TabIndex = 99;
+            this.btn_Luu.Text = "Lưu";
+            this.btn_Luu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_Luu.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(285, 310);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(590, 231);
+            this.dataGridView1.TabIndex = 98;
+            // 
+            // btn_Resetdd
+            // 
+            this.btn_Resetdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Resetdd.Image = global::Project_CDIO2.Properties.Resources.arrow_refresh_4_icon;
+            this.btn_Resetdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Resetdd.Location = new System.Drawing.Point(610, 137);
+            this.btn_Resetdd.Name = "btn_Resetdd";
+            this.btn_Resetdd.Size = new System.Drawing.Size(154, 64);
+            this.btn_Resetdd.TabIndex = 97;
+            this.btn_Resetdd.Text = "Làm mới";
+            this.btn_Resetdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_Resetdd.UseVisualStyleBackColor = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Location = new System.Drawing.Point(285, 137);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(303, 148);
+            this.groupBox2.TabIndex = 96;
+            this.groupBox2.TabStop = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(16, 72);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(169, 20);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Số sinh viên vắng: ";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(16, 27);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(187, 20);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Số sinh viên có mặt: ";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(288, 93);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(48, 25);
+            this.label7.TabIndex = 95;
+            this.label7.Text = "Lớp";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(384, 94);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(145, 24);
+            this.comboBox2.TabIndex = 94;
+            // 
+            // btn_turnOn
+            // 
+            this.btn_turnOn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_turnOn.Image = ((System.Drawing.Image)(resources.GetObject("btn_turnOn.Image")));
+            this.btn_turnOn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_turnOn.Location = new System.Drawing.Point(44, 367);
+            this.btn_turnOn.Name = "btn_turnOn";
+            this.btn_turnOn.Size = new System.Drawing.Size(192, 68);
+            this.btn_turnOn.TabIndex = 93;
+            this.btn_turnOn.Text = "Bật Camera";
+            this.btn_turnOn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_turnOn.UseVisualStyleBackColor = true;
+            this.btn_turnOn.Click += new System.EventHandler(this.btn_turnOn_Click);
+            // 
+            // cb_cam
+            // 
+            this.cb_cam.FormattingEnabled = true;
+            this.cb_cam.Location = new System.Drawing.Point(108, 94);
+            this.cb_cam.Name = "cb_cam";
+            this.cb_cam.Size = new System.Drawing.Size(156, 24);
+            this.cb_cam.TabIndex = 91;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(312, 24);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(189, 38);
+            this.label8.TabIndex = 90;
+            this.label8.Text = "Điểm Danh";
             // 
             // btn_reset_mk
             // 
@@ -221,158 +375,6 @@ namespace Project_CDIO2
             this.label2.Size = new System.Drawing.Size(226, 38);
             this.label2.TabIndex = 81;
             this.label2.Text = "Đổi Mật Khẩu";
-            // 
-            // panel_DiemDanh
-            // 
-            this.panel_DiemDanh.Controls.Add(this.pictureBox1);
-            this.panel_DiemDanh.Controls.Add(this.label9);
-            this.panel_DiemDanh.Controls.Add(this.btn_Luu);
-            this.panel_DiemDanh.Controls.Add(this.dataGridView1);
-            this.panel_DiemDanh.Controls.Add(this.btn_Resetdd);
-            this.panel_DiemDanh.Controls.Add(this.groupBox2);
-            this.panel_DiemDanh.Controls.Add(this.label7);
-            this.panel_DiemDanh.Controls.Add(this.comboBox2);
-            this.panel_DiemDanh.Controls.Add(this.btn_turnOn);
-            this.panel_DiemDanh.Controls.Add(this.cb_cam);
-            this.panel_DiemDanh.Controls.Add(this.label8);
-            this.panel_DiemDanh.Location = new System.Drawing.Point(3, 0);
-            this.panel_DiemDanh.Name = "panel_DiemDanh";
-            this.panel_DiemDanh.Size = new System.Drawing.Size(893, 565);
-            this.panel_DiemDanh.TabIndex = 90;
-            this.panel_DiemDanh.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_DiemDanh_Paint);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(32, 134);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(232, 211);
-            this.pictureBox1.TabIndex = 100;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(28, 97);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(74, 20);
-            this.label9.TabIndex = 2;
-            this.label9.Text = "Camera";
-            // 
-            // btn_Luu
-            // 
-            this.btn_Luu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Luu.Image = global::Project_CDIO2.Properties.Resources.Save_icon__1_;
-            this.btn_Luu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Luu.Location = new System.Drawing.Point(610, 218);
-            this.btn_Luu.Name = "btn_Luu";
-            this.btn_Luu.Size = new System.Drawing.Size(154, 64);
-            this.btn_Luu.TabIndex = 99;
-            this.btn_Luu.Text = "Lưu";
-            this.btn_Luu.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(285, 310);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(590, 231);
-            this.dataGridView1.TabIndex = 98;
-            // 
-            // btn_Resetdd
-            // 
-            this.btn_Resetdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Resetdd.Image = global::Project_CDIO2.Properties.Resources.arrow_refresh_4_icon;
-            this.btn_Resetdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Resetdd.Location = new System.Drawing.Point(610, 137);
-            this.btn_Resetdd.Name = "btn_Resetdd";
-            this.btn_Resetdd.Size = new System.Drawing.Size(154, 64);
-            this.btn_Resetdd.TabIndex = 97;
-            this.btn_Resetdd.Text = "Làm mới";
-            this.btn_Resetdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Resetdd.UseVisualStyleBackColor = true;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Location = new System.Drawing.Point(285, 137);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(303, 148);
-            this.groupBox2.TabIndex = 96;
-            this.groupBox2.TabStop = false;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(16, 72);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(169, 20);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Số sinh viên vắng: ";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(16, 27);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(187, 20);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Số sinh viên có mặt: ";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(288, 93);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(48, 25);
-            this.label7.TabIndex = 95;
-            this.label7.Text = "Lớp";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(384, 94);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(145, 24);
-            this.comboBox2.TabIndex = 94;
-            // 
-            // btn_turnOn
-            // 
-            this.btn_turnOn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_turnOn.Image = global::Project_CDIO2.Properties.Resources.switch_turn_off_icon;
-            this.btn_turnOn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_turnOn.Location = new System.Drawing.Point(44, 367);
-            this.btn_turnOn.Name = "btn_turnOn";
-            this.btn_turnOn.Size = new System.Drawing.Size(192, 68);
-            this.btn_turnOn.TabIndex = 93;
-            this.btn_turnOn.Text = "Bật Camera";
-            this.btn_turnOn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_turnOn.UseVisualStyleBackColor = true;
-            this.btn_turnOn.Click += new System.EventHandler(this.btn_turnOn_Click);
-            // 
-            // cb_cam
-            // 
-            this.cb_cam.FormattingEnabled = true;
-            this.cb_cam.Location = new System.Drawing.Point(108, 94);
-            this.cb_cam.Name = "cb_cam";
-            this.cb_cam.Size = new System.Drawing.Size(156, 24);
-            this.cb_cam.TabIndex = 91;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(312, 24);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(189, 38);
-            this.label8.TabIndex = 90;
-            this.label8.Text = "Điểm Danh";
             // 
             // frm_GiangVien_Page
             // 

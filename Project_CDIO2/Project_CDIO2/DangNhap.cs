@@ -32,27 +32,28 @@ namespace Project_CDIO2
                 Admin_Teacher ad = new Admin_Teacher();
                 ad.Show();
             }
-            string sqlDangNhap = "select count (*) from TaiKhoan where Username = '" + txt_Username.Text + "' and Pasword = '" + txt_Pass.Text + "'";
-            int kq = (int)lopchung.login(sqlDangNhap);
-            if (kq >= 1)
-            {
-                MessageBox.Show("Đăng nhập thành công");
-                frm_GiangVien_Page main = new frm_GiangVien_Page();
-                main.Show();
-            }
             else
-                MessageBox.Show("Đăng nhập thất bại");
+            {
+                string sqlDangNhap = "select count (*) from TaiKhoan where Username = '" + txt_Username.Text + "' and Pasword = '" + txt_Pass.Text + "'";
+                int kq = (int)lopchung.login(sqlDangNhap);
+                if (kq >= 1)
+                {
+                    MessageBox.Show("Đăng nhập thành công");
+                    frm_GiangVien_Page main = new frm_GiangVien_Page();
+                    main.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Đăng nhập thất bại");
+                }
+            }
+            
+                
+        }
 
-            //string sqlDangNhap = "select count (*) from AFR where username = '" + txt_Username.Text + "' and password = '" + txt_Pass.Text + "'";
-            //int kq = (int)lopchung.login(sqlDangNhap);
-            //if (kq >= 1)
-            //{
-            //    MessageBox.Show("Đăng nhập thành công");
-            //    Admin_Teacher main = new Admin_Teacher();
-            //    main.Show();
-            //}
-            //else
-            //    MessageBox.Show("Đăng nhập thất bại");
+        private void DangNhap_Load(object sender, EventArgs e)
+        {
+            this.txt_Pass.PasswordChar = '*';
         }
     }
 }
