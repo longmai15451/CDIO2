@@ -40,8 +40,6 @@ D:\CDIO2\Project_CDIO2\Project_CDIO2\bin\Debug\zh-tw\ZedGraph.resources.dll
 D:\CDIO2\Project_CDIO2\Project_CDIO2\obj\Debug\Project_CDIO2.csproj.CopyComplete
 D:\CDIO2\Project_CDIO2\Project_CDIO2\obj\Debug\Project_CDIO2.frm_DiemDanh.resources
 D:\CDIO2\Project_CDIO2\Project_CDIO2\obj\Debug\Project_CDIO2.frm_GiangVien_Page.resources
-D:\CDIO2\Code\CDIO2\Project_CDIO2\Project_CDIO2\bin\Debug\AFR.mdf
-D:\CDIO2\Code\CDIO2\Project_CDIO2\Project_CDIO2\bin\Debug\AFR_log.ldf
 D:\CDIO2\Code\CDIO2\Project_CDIO2\Project_CDIO2\bin\Debug\Project_CDIO2.exe.config
 D:\CDIO2\Code\CDIO2\Project_CDIO2\Project_CDIO2\bin\Debug\Project_CDIO2.exe
 D:\CDIO2\Code\CDIO2\Project_CDIO2\Project_CDIO2\bin\Debug\Project_CDIO2.pdb

@@ -14,6 +14,7 @@ namespace Project_CDIO2
     {
         List<Panel> listPanel = new List<Panel>();
         int index;
+        LOPDUNGCHUNG lopchung = new LOPDUNGCHUNG();
         public Admin_Teacher()
         {
             InitializeComponent();
@@ -21,12 +22,6 @@ namespace Project_CDIO2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //frm_GiangVien gv = new frm_GiangVien();
-            //gv.TopLevel = false;
-            //panel_Admin1.Controls.Add(gv);
-            //gv.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            //gv.Dock = DockStyle.Fill;
-            //gv.Show();
             if (index < listPanel.Count - 1)
             {
                 listPanel[++index].BringToFront();
@@ -44,22 +39,67 @@ namespace Project_CDIO2
             if (index > 0)
                 listPanel[--index].BringToFront();
         }
-
+        public void LoadGV()
+        {
+            string sqlGV = "select g.MaGiangVien, g.TenGiangVien, g.GioiTinh, g.Khoa, t.Username, t.Pasword from GiangVien g, TaiKhoan t where g.MaGiangVien = t.MaGiangVien";
+            dataGridViewGV.DataSource = lopchung.LoadDL(sqlGV);
+        }
         private void Admin_Teacher_Load(object sender, EventArgs e)
         {
             listPanel.Add(panel_Admin1);
             listPanel.Add(panel_Admin2);
             listPanel[index].BringToFront();
-        }
-
-        private void button2_Click_1(object sender, EventArgs e)
-        {
+            LoadGV();
 
         }
 
-        private void backToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btn_AddGV_Click(object sender, EventArgs e)
         {
+            int loai = 1;
+            string sqlThemGV = "insert into GiangVien values('"+txt_MaGiangVien.Text+"',N'"+txt_TenGV.Text+"', '"+cbo_GioiTinh.SelectedValue+"', '"+cb_Khoa.SelectedValue+"')";
+            string sqlThemGV2 = "insert into TaiKhoan values('"+txt_usename.Text+"','"+txt_Pass.Text+"', '"+cbo_GioiTinh.SelectedValue+"', '"+txt_MaGiangVien.Text+"')";
+            int kq1 = (int)lopchung.themXoaSua(sqlThemGV);
+            int kq2 = (int)lopchung.themXoaSua(sqlThemGV2);
+            if(kq1 >=1 && kq2 >= 1)
+            {
+                MessageBox.Show("Thêm giảng viên thành công");
+            }
+            else
+            {
+                MessageBox.Show("Thêm thất bại");
+            }
+            txt_MaGiangVien.Text = "";
+            txt_TenGV.Text = "";
+            txt_usename.Text = "";
+            txt_Pass.Text = "";
+            LoadGV();
+        }
 
+        private void dataGridViewGV_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txt_MaGiangVien.Text = dataGridViewGV.CurrentRow.Cells["MaGiangVien"].Value.ToString();
+            txt_TenGV.Text = dataGridViewGV.CurrentRow.Cells["TenGiangVien"].Value.ToString();
+            txt_usename.Text = dataGridViewGV.CurrentRow.Cells["Username"].Value.ToString();
+            txt_Pass.Text = dataGridViewGV.CurrentRow.Cells["Pasword"].Value.ToString();
+            cb_Khoa.Text = dataGridViewGV.CurrentRow.Cells["Khoa"].Value.ToString();
+            cbo_GioiTinh.Text = dataGridViewGV.CurrentRow.Cells["GioiTinh"].Value.ToString();
+        }
+
+        private void btn_DelGV_Click(object sender, EventArgs e)
+        {
+            string sqlXoa = "delete from GiangVien where MaGiangVien = '"+txt_MaGiangVien.Text+"'";
+            string sqlXoa2 = "delete from TaiKhoan where Username = '" + txt_usename.Text + "'";
+            int kq1 = (int)lopchung.themXoaSua(sqlXoa2);
+            int kq2 = (int)lopchung.themXoaSua(sqlXoa);
+            if(kq1 >=1 && kq2 >= 1)
+            {
+                MessageBox.Show("Xóa thành công");
+            }
+            else
+            {
+                MessageBox.Show("Xóa thất bại");
+            }
+            LoadGV();
         }
     }
 }

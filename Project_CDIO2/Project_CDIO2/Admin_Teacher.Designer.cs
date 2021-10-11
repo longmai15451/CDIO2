@@ -72,13 +72,13 @@ namespace Project_CDIO2
             this.cb_Khoa = new System.Windows.Forms.ComboBox();
             this.txt_Pass = new System.Windows.Forms.TextBox();
             this.txt_usename = new System.Windows.Forms.TextBox();
-            this.checkb_Nu = new System.Windows.Forms.CheckBox();
-            this.checkb_Nam = new System.Windows.Forms.CheckBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.cbo_GioiTinh = new System.Windows.Forms.ComboBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.panel_Admin1.SuspendLayout();
@@ -140,7 +140,6 @@ namespace Project_CDIO2
             this.backToolStripMenuItem.Name = "backToolStripMenuItem";
             this.backToolStripMenuItem.Size = new System.Drawing.Size(77, 24);
             this.backToolStripMenuItem.Text = "Quay lại";
-            this.backToolStripMenuItem.Click += new System.EventHandler(this.backToolStripMenuItem_Click);
             // 
             // closeProgramToolStripMenuItem
             // 
@@ -302,7 +301,6 @@ namespace Project_CDIO2
             this.btn_BatCam.Text = "Bật Camera";
             this.btn_BatCam.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_BatCam.UseVisualStyleBackColor = true;
-            this.btn_BatCam.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // btn_Chup
             // 
@@ -418,6 +416,8 @@ namespace Project_CDIO2
             // 
             // panel_Admin2
             // 
+            this.panel_Admin2.Controls.Add(this.cbo_GioiTinh);
+            this.panel_Admin2.Controls.Add(this.label14);
             this.panel_Admin2.Controls.Add(this.txt_MaGiangVien);
             this.panel_Admin2.Controls.Add(this.label13);
             this.panel_Admin2.Controls.Add(this.btn_AddGV);
@@ -428,8 +428,6 @@ namespace Project_CDIO2
             this.panel_Admin2.Controls.Add(this.cb_Khoa);
             this.panel_Admin2.Controls.Add(this.txt_Pass);
             this.panel_Admin2.Controls.Add(this.txt_usename);
-            this.panel_Admin2.Controls.Add(this.checkb_Nu);
-            this.panel_Admin2.Controls.Add(this.checkb_Nam);
             this.panel_Admin2.Controls.Add(this.label8);
             this.panel_Admin2.Controls.Add(this.label9);
             this.panel_Admin2.Controls.Add(this.label10);
@@ -442,7 +440,7 @@ namespace Project_CDIO2
             // 
             // txt_MaGiangVien
             // 
-            this.txt_MaGiangVien.Location = new System.Drawing.Point(156, 107);
+            this.txt_MaGiangVien.Location = new System.Drawing.Point(128, 105);
             this.txt_MaGiangVien.Name = "txt_MaGiangVien";
             this.txt_MaGiangVien.Size = new System.Drawing.Size(144, 22);
             this.txt_MaGiangVien.TabIndex = 62;
@@ -451,7 +449,7 @@ namespace Project_CDIO2
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(34, 107);
+            this.label13.Location = new System.Drawing.Point(6, 105);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(33, 25);
             this.label13.TabIndex = 61;
@@ -469,6 +467,7 @@ namespace Project_CDIO2
             this.btn_AddGV.Text = "Thêm ";
             this.btn_AddGV.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_AddGV.UseVisualStyleBackColor = true;
+            this.btn_AddGV.Click += new System.EventHandler(this.btn_AddGV_Click);
             // 
             // btn_UpdateGV
             // 
@@ -495,6 +494,7 @@ namespace Project_CDIO2
             this.btn_DelGV.Text = "Xóa";
             this.btn_DelGV.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_DelGV.UseVisualStyleBackColor = true;
+            this.btn_DelGV.Click += new System.EventHandler(this.btn_DelGV_Click);
             // 
             // dataGridViewGV
             // 
@@ -505,10 +505,11 @@ namespace Project_CDIO2
             this.dataGridViewGV.RowTemplate.Height = 24;
             this.dataGridViewGV.Size = new System.Drawing.Size(825, 281);
             this.dataGridViewGV.TabIndex = 57;
+            this.dataGridViewGV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewGV_CellClick);
             // 
             // txt_TenGV
             // 
-            this.txt_TenGV.Location = new System.Drawing.Point(457, 111);
+            this.txt_TenGV.Location = new System.Drawing.Point(429, 109);
             this.txt_TenGV.Name = "txt_TenGV";
             this.txt_TenGV.Size = new System.Drawing.Size(144, 22);
             this.txt_TenGV.TabIndex = 56;
@@ -516,52 +517,35 @@ namespace Project_CDIO2
             // cb_Khoa
             // 
             this.cb_Khoa.FormattingEnabled = true;
-            this.cb_Khoa.Location = new System.Drawing.Point(712, 60);
+            this.cb_Khoa.Items.AddRange(new object[] {
+            "45",
+            "23",
+            "65",
+            "89"});
+            this.cb_Khoa.Location = new System.Drawing.Point(684, 58);
             this.cb_Khoa.Name = "cb_Khoa";
             this.cb_Khoa.Size = new System.Drawing.Size(147, 24);
             this.cb_Khoa.TabIndex = 55;
             // 
             // txt_Pass
             // 
-            this.txt_Pass.Location = new System.Drawing.Point(457, 63);
+            this.txt_Pass.Location = new System.Drawing.Point(429, 61);
             this.txt_Pass.Name = "txt_Pass";
             this.txt_Pass.Size = new System.Drawing.Size(144, 22);
             this.txt_Pass.TabIndex = 54;
             // 
             // txt_usename
             // 
-            this.txt_usename.Location = new System.Drawing.Point(156, 62);
+            this.txt_usename.Location = new System.Drawing.Point(128, 60);
             this.txt_usename.Name = "txt_usename";
             this.txt_usename.Size = new System.Drawing.Size(144, 22);
             this.txt_usename.TabIndex = 53;
-            // 
-            // checkb_Nu
-            // 
-            this.checkb_Nu.AutoSize = true;
-            this.checkb_Nu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkb_Nu.Location = new System.Drawing.Point(725, 106);
-            this.checkb_Nu.Name = "checkb_Nu";
-            this.checkb_Nu.Size = new System.Drawing.Size(61, 29);
-            this.checkb_Nu.TabIndex = 52;
-            this.checkb_Nu.Text = "Nữ";
-            this.checkb_Nu.UseVisualStyleBackColor = true;
-            // 
-            // checkb_Nam
-            // 
-            this.checkb_Nam.AutoSize = true;
-            this.checkb_Nam.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkb_Nam.Location = new System.Drawing.Point(635, 106);
-            this.checkb_Nam.Name = "checkb_Nam";
-            this.checkb_Nam.Size = new System.Drawing.Size(84, 29);
-            this.checkb_Nam.TabIndex = 51;
-            this.checkb_Nam.Text = "Nam ";
-            this.checkb_Nam.UseVisualStyleBackColor = true;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(634, 59);
+            this.label8.Location = new System.Drawing.Point(606, 57);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(63, 25);
             this.label8.TabIndex = 50;
@@ -571,7 +555,7 @@ namespace Project_CDIO2
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(335, 107);
+            this.label9.Location = new System.Drawing.Point(301, 105);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(112, 25);
             this.label9.TabIndex = 49;
@@ -581,7 +565,7 @@ namespace Project_CDIO2
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(329, 60);
+            this.label10.Location = new System.Drawing.Point(301, 58);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(106, 25);
             this.label10.TabIndex = 48;
@@ -591,7 +575,7 @@ namespace Project_CDIO2
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(34, 59);
+            this.label11.Location = new System.Drawing.Point(6, 57);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(110, 25);
             this.label11.TabIndex = 47;
@@ -606,6 +590,27 @@ namespace Project_CDIO2
             this.label12.Size = new System.Drawing.Size(188, 38);
             this.label12.TabIndex = 46;
             this.label12.Text = "Giảng Viên";
+            // 
+            // cbo_GioiTinh
+            // 
+            this.cbo_GioiTinh.FormattingEnabled = true;
+            this.cbo_GioiTinh.Items.AddRange(new object[] {
+            "Nam",
+            "Nữ"});
+            this.cbo_GioiTinh.Location = new System.Drawing.Point(684, 109);
+            this.cbo_GioiTinh.Name = "cbo_GioiTinh";
+            this.cbo_GioiTinh.Size = new System.Drawing.Size(147, 24);
+            this.cbo_GioiTinh.TabIndex = 63;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(587, 109);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(91, 25);
+            this.label14.TabIndex = 64;
+            this.label14.Text = "Giới tính";
             // 
             // Admin_Teacher
             // 
@@ -680,8 +685,6 @@ namespace Project_CDIO2
         private System.Windows.Forms.ComboBox cb_Khoa;
         private System.Windows.Forms.TextBox txt_Pass;
         private System.Windows.Forms.TextBox txt_usename;
-        private System.Windows.Forms.CheckBox checkb_Nu;
-        private System.Windows.Forms.CheckBox checkb_Nam;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
@@ -689,5 +692,7 @@ namespace Project_CDIO2
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txt_MaGiangVien;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.ComboBox cbo_GioiTinh;
     }
 }
