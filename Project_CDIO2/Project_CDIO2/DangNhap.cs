@@ -26,24 +26,22 @@ namespace Project_CDIO2
         {
             string admin = "admin1";
             string pass = "123456";
-            string use = "nguyenvanA";
-            string passUse = "123";
             if (admin.Equals(txt_Username.Text) && pass.Equals(txt_Pass.Text))
             {
                 MessageBox.Show("Đăng nhập thành công");
                 Admin_Teacher ad = new Admin_Teacher();
                 ad.Show();
             }
-            else if(use.Equals(txt_Username.Text) && passUse.Equals(txt_Pass.Text))
+            string sqlDangNhap = "select count (*) from TaiKhoan where Username = '" + txt_Username.Text + "' and Pasword = '" + txt_Pass.Text + "'";
+            int kq = (int)lopchung.login(sqlDangNhap);
+            if (kq >= 1)
             {
                 MessageBox.Show("Đăng nhập thành công");
-                frm_GiangVien_Page ad = new frm_GiangVien_Page();
-                ad.Show();
+                frm_GiangVien_Page main = new frm_GiangVien_Page();
+                main.Show();
             }
             else
-            {
-                MessageBox.Show("Sai tài khoản hoặc mật khẩu");
-            }
+                MessageBox.Show("Đăng nhập thất bại");
 
             //string sqlDangNhap = "select count (*) from AFR where username = '" + txt_Username.Text + "' and password = '" + txt_Pass.Text + "'";
             //int kq = (int)lopchung.login(sqlDangNhap);

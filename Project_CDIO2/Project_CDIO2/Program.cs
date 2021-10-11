@@ -16,7 +16,7 @@ namespace Project_CDIO2
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Admin_Teacher());
+            Application.Run(new frm_GiangVien_Page());
         }
     }
 }

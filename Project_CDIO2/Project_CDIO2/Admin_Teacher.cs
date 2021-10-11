@@ -56,8 +56,8 @@ namespace Project_CDIO2
         private void btn_AddGV_Click(object sender, EventArgs e)
         {
             int loai = 1;
-            string sqlThemGV = "insert into GiangVien values('"+txt_MaGiangVien.Text+"',N'"+txt_TenGV.Text+"', '"+cbo_GioiTinh.SelectedValue+"', '"+cb_Khoa.SelectedValue+"')";
-            string sqlThemGV2 = "insert into TaiKhoan values('"+txt_usename.Text+"','"+txt_Pass.Text+"', '"+cbo_GioiTinh.SelectedValue+"', '"+txt_MaGiangVien.Text+"')";
+            string sqlThemGV = "insert into GiangVien values('"+txt_MaGiangVien.Text+"',N'"+txt_TenGV.Text+"', '"+cbo_GioiTinh.SelectedItem+"', '"+cb_Khoa.SelectedItem+"')";
+            string sqlThemGV2 = "insert into TaiKhoan values('"+txt_usename.Text+"','"+txt_Pass.Text+"', '"+loai+"', '"+txt_MaGiangVien.Text+"')";
             int kq1 = (int)lopchung.themXoaSua(sqlThemGV);
             int kq2 = (int)lopchung.themXoaSua(sqlThemGV2);
             if(kq1 >=1 && kq2 >= 1)
@@ -71,6 +71,8 @@ namespace Project_CDIO2
             txt_MaGiangVien.Text = "";
             txt_TenGV.Text = "";
             txt_usename.Text = "";
+            cb_Khoa.Text = "";
+            cbo_GioiTinh.Text = "";
             txt_Pass.Text = "";
             LoadGV();
         }
@@ -99,6 +101,36 @@ namespace Project_CDIO2
             {
                 MessageBox.Show("Xóa thất bại");
             }
+            txt_MaGiangVien.Text = "";
+            txt_TenGV.Text = "";
+            txt_usename.Text = "";
+            cb_Khoa.Text = "";
+            cbo_GioiTinh.Text = "";
+            txt_Pass.Text = "";
+            LoadGV();
+        }
+
+        private void btn_UpdateGV_Click(object sender, EventArgs e)
+        {
+            int loai = 1;
+            string sqlUpdate = "update GiangVien set TenGiangVien = '"+txt_TenGV.Text+"', GioiTinh = '"+cbo_GioiTinh.SelectedItem+"', Khoa = '"+cb_Khoa.SelectedItem+"' where MaGiangVien = '"+txt_MaGiangVien.Text+"'";
+            string sqlUpdate2 = "update TaiKhoan set Pasword = '"+txt_Pass.Text+"', Loai = '"+loai+"', MaGiangVien = '"+txt_MaGiangVien.Text+"' where Username = '"+txt_usename.Text+"'";
+            int kq1 = (int)lopchung.themXoaSua(sqlUpdate);
+            int kq2 = (int)lopchung.themXoaSua(sqlUpdate2);
+            if (kq1 >= 1 && kq2 >= 1)
+            {
+                MessageBox.Show("Cập nhật thành công");
+            }
+            else
+            {
+                MessageBox.Show("Cập nhật thất bại");
+            }
+            txt_MaGiangVien.Text = "";
+            txt_TenGV.Text = "";
+            txt_usename.Text = "";
+            cb_Khoa.Text = "";
+            cbo_GioiTinh.Text = "";
+            txt_Pass.Text = "";
             LoadGV();
         }
     }

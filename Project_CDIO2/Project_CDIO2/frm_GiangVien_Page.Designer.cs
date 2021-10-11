@@ -35,14 +35,15 @@ namespace Project_CDIO2
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.quayLạiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel_CaiDat = new System.Windows.Forms.Panel();
+            this.lbl_name = new System.Windows.Forms.Label();
             this.btn_reset_mk = new System.Windows.Forms.Button();
             this.btn_LuuMK = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txt_PassNew2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txt_passNew = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_Pass = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel_DiemDanh = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -69,6 +70,7 @@ namespace Project_CDIO2
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lbl_name);
             this.groupBox1.Controls.Add(this.btn_CaiDat);
             this.groupBox1.Controls.Add(this.btn_DiemDanh);
             this.groupBox1.Location = new System.Drawing.Point(11, 31);
@@ -119,24 +121,35 @@ namespace Project_CDIO2
             // 
             // panel_CaiDat
             // 
+            this.panel_CaiDat.Controls.Add(this.panel_DiemDanh);
             this.panel_CaiDat.Controls.Add(this.btn_reset_mk);
             this.panel_CaiDat.Controls.Add(this.btn_LuuMK);
             this.panel_CaiDat.Controls.Add(this.label4);
-            this.panel_CaiDat.Controls.Add(this.textBox3);
+            this.panel_CaiDat.Controls.Add(this.txt_PassNew2);
             this.panel_CaiDat.Controls.Add(this.label3);
-            this.panel_CaiDat.Controls.Add(this.textBox2);
+            this.panel_CaiDat.Controls.Add(this.txt_passNew);
             this.panel_CaiDat.Controls.Add(this.label1);
-            this.panel_CaiDat.Controls.Add(this.textBox1);
+            this.panel_CaiDat.Controls.Add(this.txt_Pass);
             this.panel_CaiDat.Controls.Add(this.label2);
             this.panel_CaiDat.Location = new System.Drawing.Point(272, 41);
             this.panel_CaiDat.Name = "panel_CaiDat";
             this.panel_CaiDat.Size = new System.Drawing.Size(892, 565);
             this.panel_CaiDat.TabIndex = 2;
             // 
+            // lbl_name
+            // 
+            this.lbl_name.AutoSize = true;
+            this.lbl_name.Location = new System.Drawing.Point(83, 18);
+            this.lbl_name.Name = "lbl_name";
+            this.lbl_name.Size = new System.Drawing.Size(54, 17);
+            this.lbl_name.TabIndex = 90;
+            this.lbl_name.Text = "label10";
+            this.lbl_name.Click += new System.EventHandler(this.lbl_name_Click);
+            // 
             // btn_reset_mk
             // 
             this.btn_reset_mk.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_reset_mk.Image = global::Project_CDIO2.Properties.Resources.Save_icon;
+            this.btn_reset_mk.Image = global::Project_CDIO2.Properties.Resources.Reset_icon;
             this.btn_reset_mk.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_reset_mk.Location = new System.Drawing.Point(323, 239);
             this.btn_reset_mk.Name = "btn_reset_mk";
@@ -158,6 +171,7 @@ namespace Project_CDIO2
             this.btn_LuuMK.Text = "Lưu";
             this.btn_LuuMK.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_LuuMK.UseVisualStyleBackColor = true;
+            this.btn_LuuMK.Click += new System.EventHandler(this.btn_LuuMK_Click);
             // 
             // label4
             // 
@@ -169,12 +183,12 @@ namespace Project_CDIO2
             this.label4.TabIndex = 87;
             this.label4.Text = "Nhập lại mật khẩu mới";
             // 
-            // textBox3
+            // txt_PassNew2
             // 
-            this.textBox3.Location = new System.Drawing.Point(463, 182);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(189, 22);
-            this.textBox3.TabIndex = 86;
+            this.txt_PassNew2.Location = new System.Drawing.Point(463, 182);
+            this.txt_PassNew2.Name = "txt_PassNew2";
+            this.txt_PassNew2.Size = new System.Drawing.Size(189, 22);
+            this.txt_PassNew2.TabIndex = 86;
             // 
             // label3
             // 
@@ -186,12 +200,12 @@ namespace Project_CDIO2
             this.label3.TabIndex = 85;
             this.label3.Text = "Mật khẩu mới";
             // 
-            // textBox2
+            // txt_passNew
             // 
-            this.textBox2.Location = new System.Drawing.Point(463, 135);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(189, 22);
-            this.textBox2.TabIndex = 84;
+            this.txt_passNew.Location = new System.Drawing.Point(463, 135);
+            this.txt_passNew.Name = "txt_passNew";
+            this.txt_passNew.Size = new System.Drawing.Size(189, 22);
+            this.txt_passNew.TabIndex = 84;
             // 
             // label1
             // 
@@ -203,12 +217,12 @@ namespace Project_CDIO2
             this.label1.TabIndex = 83;
             this.label1.Text = "Mật khẩu cũ";
             // 
-            // textBox1
+            // txt_Pass
             // 
-            this.textBox1.Location = new System.Drawing.Point(463, 86);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(189, 22);
-            this.textBox1.TabIndex = 82;
+            this.txt_Pass.Location = new System.Drawing.Point(463, 86);
+            this.txt_Pass.Name = "txt_Pass";
+            this.txt_Pass.Size = new System.Drawing.Size(189, 22);
+            this.txt_Pass.TabIndex = 82;
             // 
             // label2
             // 
@@ -233,10 +247,11 @@ namespace Project_CDIO2
             this.panel_DiemDanh.Controls.Add(this.btn_turnOn);
             this.panel_DiemDanh.Controls.Add(this.cb_cam);
             this.panel_DiemDanh.Controls.Add(this.label8);
-            this.panel_DiemDanh.Location = new System.Drawing.Point(272, 41);
+            this.panel_DiemDanh.Location = new System.Drawing.Point(3, 0);
             this.panel_DiemDanh.Name = "panel_DiemDanh";
-            this.panel_DiemDanh.Size = new System.Drawing.Size(892, 565);
+            this.panel_DiemDanh.Size = new System.Drawing.Size(893, 565);
             this.panel_DiemDanh.TabIndex = 90;
+            this.panel_DiemDanh.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_DiemDanh_Paint);
             // 
             // pictureBox1
             // 
@@ -376,7 +391,6 @@ namespace Project_CDIO2
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1180, 618);
-            this.Controls.Add(this.panel_DiemDanh);
             this.Controls.Add(this.panel_CaiDat);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
@@ -386,6 +400,7 @@ namespace Project_CDIO2
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_GiangVien_Page_FormClosing);
             this.Load += new System.EventHandler(this.frm_GiangVien_Page_Load);
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel_CaiDat.ResumeLayout(false);
@@ -411,11 +426,11 @@ namespace Project_CDIO2
         private System.Windows.Forms.Panel panel_CaiDat;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txt_PassNew2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txt_passNew;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_Pass;
         private System.Windows.Forms.Button btn_LuuMK;
         private System.Windows.Forms.Button btn_reset_mk;
         private System.Windows.Forms.Panel panel_DiemDanh;
@@ -432,5 +447,6 @@ namespace Project_CDIO2
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lbl_name;
     }
 }

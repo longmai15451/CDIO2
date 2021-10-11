@@ -62,6 +62,8 @@ namespace Project_CDIO2
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel_Admin2 = new System.Windows.Forms.Panel();
+            this.cbo_GioiTinh = new System.Windows.Forms.ComboBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.txt_MaGiangVien = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.btn_AddGV = new System.Windows.Forms.Button();
@@ -77,8 +79,6 @@ namespace Project_CDIO2
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.cbo_GioiTinh = new System.Windows.Forms.ComboBox();
-            this.label14 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.panel_Admin1.SuspendLayout();
@@ -433,10 +433,31 @@ namespace Project_CDIO2
             this.panel_Admin2.Controls.Add(this.label10);
             this.panel_Admin2.Controls.Add(this.label11);
             this.panel_Admin2.Controls.Add(this.label12);
-            this.panel_Admin2.Location = new System.Drawing.Point(257, 31);
+            this.panel_Admin2.Location = new System.Drawing.Point(260, 31);
             this.panel_Admin2.Name = "panel_Admin2";
             this.panel_Admin2.Size = new System.Drawing.Size(973, 654);
             this.panel_Admin2.TabIndex = 142;
+            // 
+            // cbo_GioiTinh
+            // 
+            this.cbo_GioiTinh.FormattingEnabled = true;
+            this.cbo_GioiTinh.Items.AddRange(new object[] {
+            "Nam",
+            "Nữ"});
+            this.cbo_GioiTinh.Location = new System.Drawing.Point(684, 109);
+            this.cbo_GioiTinh.Name = "cbo_GioiTinh";
+            this.cbo_GioiTinh.Size = new System.Drawing.Size(147, 24);
+            this.cbo_GioiTinh.TabIndex = 63;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(587, 109);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(91, 25);
+            this.label14.TabIndex = 64;
+            this.label14.Text = "Giới tính";
             // 
             // txt_MaGiangVien
             // 
@@ -481,6 +502,7 @@ namespace Project_CDIO2
             this.btn_UpdateGV.Text = "Cập nhật";
             this.btn_UpdateGV.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_UpdateGV.UseVisualStyleBackColor = true;
+            this.btn_UpdateGV.Click += new System.EventHandler(this.btn_UpdateGV_Click);
             // 
             // btn_DelGV
             // 
@@ -590,27 +612,6 @@ namespace Project_CDIO2
             this.label12.Size = new System.Drawing.Size(188, 38);
             this.label12.TabIndex = 46;
             this.label12.Text = "Giảng Viên";
-            // 
-            // cbo_GioiTinh
-            // 
-            this.cbo_GioiTinh.FormattingEnabled = true;
-            this.cbo_GioiTinh.Items.AddRange(new object[] {
-            "Nam",
-            "Nữ"});
-            this.cbo_GioiTinh.Location = new System.Drawing.Point(684, 109);
-            this.cbo_GioiTinh.Name = "cbo_GioiTinh";
-            this.cbo_GioiTinh.Size = new System.Drawing.Size(147, 24);
-            this.cbo_GioiTinh.TabIndex = 63;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(587, 109);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(91, 25);
-            this.label14.TabIndex = 64;
-            this.label14.Text = "Giới tính";
             // 
             // Admin_Teacher
             // 

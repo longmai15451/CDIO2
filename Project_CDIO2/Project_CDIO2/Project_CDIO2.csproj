@@ -262,6 +262,9 @@
     <None Include="icon\Save-icon %281%29.png" />
     <None Include="icon\Save-icon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\Reset-icon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

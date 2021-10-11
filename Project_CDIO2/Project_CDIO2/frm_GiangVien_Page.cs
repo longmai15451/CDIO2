@@ -18,6 +18,8 @@ namespace Project_CDIO2
         int index;
         private FilterInfoCollection cameras;
         private VideoCaptureDevice cam;
+
+        LOPDUNGCHUNG lopchung = new LOPDUNGCHUNG();
         public frm_GiangVien_Page()
         {
             InitializeComponent();
@@ -47,6 +49,7 @@ namespace Project_CDIO2
                 listPanel[++index].BringToFront();
             }
         }
+        
         private void frm_GiangVien_Page_Load(object sender, EventArgs e)
         {
             listPanel.Add(panel_DiemDanh);
@@ -81,6 +84,21 @@ namespace Project_CDIO2
             {
                 cam.Stop(); 
             }
+        }
+
+        private void panel_DiemDanh_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btn_LuuMK_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void lbl_name_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
