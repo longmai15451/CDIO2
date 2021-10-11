@@ -35,7 +35,6 @@ namespace Project_CDIO2
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.quayLạiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel_CaiDat = new System.Windows.Forms.Panel();
-            this.lbl_name = new System.Windows.Forms.Label();
             this.btn_reset_mk = new System.Windows.Forms.Button();
             this.btn_LuuMK = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -70,7 +69,6 @@ namespace Project_CDIO2
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.lbl_name);
             this.groupBox1.Controls.Add(this.btn_CaiDat);
             this.groupBox1.Controls.Add(this.btn_DiemDanh);
             this.groupBox1.Location = new System.Drawing.Point(11, 31);
@@ -135,16 +133,6 @@ namespace Project_CDIO2
             this.panel_CaiDat.Name = "panel_CaiDat";
             this.panel_CaiDat.Size = new System.Drawing.Size(892, 565);
             this.panel_CaiDat.TabIndex = 2;
-            // 
-            // lbl_name
-            // 
-            this.lbl_name.AutoSize = true;
-            this.lbl_name.Location = new System.Drawing.Point(83, 18);
-            this.lbl_name.Name = "lbl_name";
-            this.lbl_name.Size = new System.Drawing.Size(54, 17);
-            this.lbl_name.TabIndex = 90;
-            this.lbl_name.Text = "label10";
-            this.lbl_name.Click += new System.EventHandler(this.lbl_name_Click);
             // 
             // btn_reset_mk
             // 
@@ -400,7 +388,6 @@ namespace Project_CDIO2
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_GiangVien_Page_FormClosing);
             this.Load += new System.EventHandler(this.frm_GiangVien_Page_Load);
             this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel_CaiDat.ResumeLayout(false);
@@ -447,6 +434,5 @@ namespace Project_CDIO2
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label lbl_name;
     }
 }
