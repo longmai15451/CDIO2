@@ -44,13 +44,18 @@ namespace Project_CDIO2
             string sqlGV = "select g.MaGiangVien, g.TenGiangVien, g.GioiTinh, g.Khoa, t.Username, t.Pasword from GiangVien g, TaiKhoan t where g.MaGiangVien = t.MaGiangVien";
             dataGridViewGV.DataSource = lopchung.LoadDL(sqlGV);
         }
+        public void LoadSV()
+        {
+            string sqlSV = "select * from SinhVien";
+            dataGridViewGV.DataSource = lopchung.LoadDL(sqlSV);
+        }
         private void Admin_Teacher_Load(object sender, EventArgs e)
         {
             listPanel.Add(panel_Admin1);
             listPanel.Add(panel_Admin2);
             listPanel[index].BringToFront();
             LoadGV();
-
+            LoadSV();
         }
 
         private void btn_AddGV_Click(object sender, EventArgs e)
@@ -120,7 +125,7 @@ namespace Project_CDIO2
         private void btn_UpdateGV_Click(object sender, EventArgs e)
         {
             int loai = 1;
-            string sqlUpdate = "update GiangVien set TenGiangVien = '"+txt_TenGV.Text+"', GioiTinh = N'"+cbo_GioiTinh.SelectedItem+"', Khoa = '"+cb_Khoa.SelectedItem+"' where MaGiangVien = '"+txt_MaGiangVien.Text+"'";
+            string sqlUpdate = "update GiangVien set TenGiangVien = N'"+txt_TenGV.Text+"', GioiTinh = N'"+cbo_GioiTinh.SelectedItem+"', Khoa = '"+cb_Khoa.SelectedItem+"' where MaGiangVien = '"+txt_MaGiangVien.Text+"'";
             string sqlUpdate2 = "update TaiKhoan set Pasword = '"+txt_Pass.Text+"', Loai = '"+loai+"', MaGiangVien = '"+txt_MaGiangVien.Text+"' where Username = '"+txt_usename.Text+"'";
             int kq1 = (int)lopchung.themXoaSua(sqlUpdate);
             int kq2 = (int)lopchung.themXoaSua(sqlUpdate2);
@@ -139,6 +144,31 @@ namespace Project_CDIO2
             cbo_GioiTinh.Text = "";
             txt_Pass.Text = "";
             LoadGV();
+        }
+
+        private void btn_addSV_Click(object sender, EventArgs e)
+        {
+            string sqlAddSV = "insert into SinhVien values('"+txt_MSSV.Text+"', N'"+txt_HotenSV+"', N'"+cb_GioiTinh_SV.SelectedItem+"', '"+dateT_Sv.Text+"', '"+txt_SDT.Text+"', '"+txt_Email.Text+"')";
+            int kq = (int)lopchung.themXoaSua(sqlAddSV);
+            if(kq >=1)
+            {
+                MessageBox.Show("Thêm sinh viên thành công");
+            }
+            else
+            {
+                MessageBox.Show("Thêm sinh viên không thành công");
+            }
+            LoadSV();
+        }
+
+        private void btn_delSV_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_updateSV_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
